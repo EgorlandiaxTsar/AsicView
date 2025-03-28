@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane minWidth="600.0" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #111;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.egorgoncharov.asicview.controllers.AsicViewController">
+    <top>
+        <BorderPane prefHeight="50.0" style="-fx-background-color: #222;" BorderPane.alignment="CENTER">
+            <left>
+                <Button mnemonicParsing="false" onMouseClicked="#openParametersModal" prefHeight="24.0" prefWidth="24.0" style="-fx-background-color: #222;" BorderPane.alignment="CENTER">
+                    <BorderPane.margin>
+                        <Insets left="30.0" />
+                    </BorderPane.margin>
+                    <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../assets/images/dark/cog.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+            </left>
+            <right>
+                <Button mnemonicParsing="false" onMouseClicked="#changeTheme" prefHeight="24.0" prefWidth="24.0" style="-fx-background-color: #222;" BorderPane.alignment="CENTER">
+                    <BorderPane.margin>
+                        <Insets right="30.0" />
+                    </BorderPane.margin>
+                    <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../assets/images/dark/sun-medium.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+            </right>
+            <center>
+                <FlowPane alignment="CENTER" columnHalignment="CENTER" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #222;" BorderPane.alignment="CENTER">
+                    <children>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../assets/images/dark/pc-case.png" />
+                            </image>
+                            <FlowPane.margin>
+                                <Insets right="15.0" />
+                            </FlowPane.margin>
+                        </ImageView>
+                        <Label fx:id="ipLabel" alignment="CENTER" contentDisplay="CENTER" text="window.asic.ip" textFill="WHITE">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </FlowPane>
+            </center>
+        </BorderPane>
+    </top>
+   <center>
+      <ScrollPane fx:id="slotsContainerScrollPane" fitToHeight="true" fitToWidth="true" style="-fx-background-color: #111; -fx-background: #111;" vbarPolicy="ALWAYS" BorderPane.alignment="CENTER">
+         <content>
+            <HBox fx:id="slotsContainer" alignment="TOP_CENTER" spacing="10.0">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </HBox>
+         </content>
+      </ScrollPane>
+   </center>
+</BorderPane>
